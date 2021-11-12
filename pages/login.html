@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="../css/index.css">
+
+</head>
+<body>
+    <header >
+        <div class="links">
+            <div class="logo">
+
+                <img src="../images/logo.webp" alt="DocumentNote">
+            </div>
+            <div>
+                <nav class="navcontainer">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="">To-Do List</a> </li>
+                        <li><a href="">Pricing</a> </li>
+                        <li><a href="">Support</a> </li>
+
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="loginform" >
+
+            <form action="" name="login"  method="post" >
+                <h4>Login</h4>
+                <input type="email" name="email" id="loginemail" placeholder="username@email.com" required autofocus>
+                <input type="password" name="password" id="loginpassword" placeholder="Password" required>
+                <a href="">ForgotPassword..?</a>
+                <label for="" class="error"></label>
+                <div class="buttons">
+                    <input type="submit" name="login" value="Login" id="login">
+                    <input type="reset" name="reset" value="Reset" >
+
+                </div>
+            </form>
+
+        </div>
+        <span></span>
+        <span class="signinlink">Don't have Create yourself...</span>
+        <div class="signinform" >
+
+            <form action="" name="signin"  method="post" >
+                <h4>Sign-in</h4>
+                <input type="email" name="email" id="signinemail" placeholder="username@email.com" required autofocus>
+                <input type="password" name="password" id="signinpassword" placeholder="Password" required>
+                <label for="" class="error"></label>
+                <div class="buttons">
+                    <input type="submit" name="signin" value="Signin" id="signin">
+                    <input type="reset" name="reset" value="Reset" >
+
+                </div>
+            </form>
+        </div>
+
+    </main>
+    <script src="../js/index.js"></script>
+</body>
+</html>

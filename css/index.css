@@ -1,0 +1,394 @@
+* {
+    margin         : 0;
+    padding        : 0;
+    box-sizing     : border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family    : 'Lora', serif;
+    line-height    : 1.5;
+
+
+}
+
+:root {
+    --bgcolor: #bcbcbc;
+
+    --fontcolor  : #9e9e9e;
+    --fontsize   : 2vw;
+    --buttoncolor: #dc143c;
+
+}
+
+body {
+    background-image : url("../images/poster.jpg");
+    background-repeat: no-repeat;
+    background-size  : cover;
+    height           : 100vh;
+
+}
+
+.jumbotron {
+    height: 60vh;
+
+}
+
+header {
+    display       : flex;
+    flex-direction: column;
+    font-size     : var(--fontsize);
+    overflow      : hidden;
+}
+
+.links {
+    display: flex;
+    height : 25%;
+}
+
+.logo img {
+    width : 20vw;
+    height: 5vw;
+
+}
+
+nav {
+    font-weight: bolder;
+
+
+}
+
+nav ul {
+    display: flex;
+    width  : fit-content;
+
+
+}
+
+nav ul li {
+    margin-left: 2%;
+    padding    : 1%;
+    width      : 12vw;
+
+}
+
+nav ul li a {
+    color: var(--fontcolor);
+    width: 10vw;
+
+}
+
+.login {
+    height          : fit-content;
+    border-radius   : 5%;
+    padding         : 1%;
+    padding-left    : 5%;
+    padding-right   : 5%;
+    width           : fit-content;
+    background-color: var(--buttoncolor);
+    margin-left     : 40%;
+    cursor          : pointer;
+
+}
+
+.login a h4 {
+    font-size: calc(var(--fontsize)+3vw);
+    color    : var(--fontcolor);
+
+
+}
+
+nav ul li :hover {
+    border-bottom: groove;
+}
+
+.quote {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    height         : 75%;
+    color          : white;
+    text-align     : center;
+    font-size      : calc(var(--fontsize)+3vw);
+}
+
+blockquote {
+    filter: drop-shadow(5px 5px 5px rgb(107, 247, 126));
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+        blinkTextCursor 500ms steps(44) infinite normal;
+    text-align : center;
+    white-space: nowrap;
+    overflow   : hidden;
+    transform  : translateY(-50%);
+}
+
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 24em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/*login.html*/
+
+main,
+main>div {
+    display        : flex;
+    align-items    : center;
+    height         : 80vh;
+    justify-content: center;
+
+}
+
+
+main span
+{
+    height: 100%;
+    animation: borderanimation 1s linear  .35s ;
+
+    border:solid var(--fontcolor);
+}
+main div {
+    width: 50%;
+}
+
+main div form {
+    display         : flex;
+    flex-direction  : column;
+    border          : groove;
+    padding         : 2%;
+    width           : 50%;
+    background-color: var(--bgcolor);
+    border-radius   : 5%;
+    opacity         : .7;
+
+
+
+}
+
+main div form h4 {
+    margin-bottom: 5%;
+    font-size    : calc(var(--fontsize));
+    text-align   : center;
+    color        : var(--buttoncolor);
+    border-bottom: groove;
+    width        : fit-content;
+    margin-left  : 40%;
+    opacity      : 1;
+
+
+
+}
+
+main div form a {
+    text-align: right;
+    color     : black;
+}
+
+
+input {
+    padding         : 5%;
+    font-size       : 1.2em;
+    border          : none;
+    background-color: transparent;
+    border-bottom   : groove black;
+    color           : black;
+    opacity         : 1;
+
+
+
+}
+
+.error {
+    color    : red;
+    font-size: calc(var(--fontsize)-1);
+    opacity  : 1;
+
+}
+
+:placeholder-shown {
+    font-weight: bolder;
+    color      : white;
+    opacity    : 1;
+
+}
+.signinlink
+{
+    display: none;
+}
+
+.buttons {
+    display        : flex;
+    margin-top     : 5%;
+    opacity        : 1;
+    justify-content: space-evenly;
+    width          : 100%;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    border          : none;
+    font-size       : calc(var(--fontsize)+2vw);
+    cursor          : pointer;
+    padding         : 1%;
+    width           : fit-content;
+    color           : var(--fontcolor);
+    background-color: var(--buttoncolor);
+    border-radius   : 5%;
+
+}
+
+input[type="reset"] {
+    background-color: transparent;
+    color           : red;
+}
+
+@keyframes borderanimation {
+    0%
+    {
+        transform: translateY(-100%);
+        opacity: .9;
+    }
+    50%
+    {
+        transform: translateY(-50%);
+        opacity: .5;
+    }
+    100%
+    {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}
+
+.show
+{
+    display: block;
+}
+.hide
+{
+    display: none;
+}
+/*mobile css*/
+@media screen and (max-width : 768px) {
+
+   
+    header {
+        font-size: calc(var(--fontsize)+6vw);
+        height: 40vh;
+
+
+    }
+    
+
+    .jumbotron {
+        height: 100vh;
+
+    }
+
+    header div {
+        margin-bottom: 20%;
+
+    }
+
+    nav ul,
+    .links {
+        flex-direction: column;
+    }
+    .logo
+    {
+        margin: 0;
+    }
+
+    .logo img {
+        width: 100vw;
+        height: 20vw;
+        padding: 0;
+    }
+
+    .links {
+        height : fit-content;
+        padding: 1%;
+
+    }
+
+    nav ul {
+        width: 100%;
+
+    }
+
+    nav ul li {
+        margin-left: 2%;
+        padding    : 1%;
+        width      : 80vw;
+    }
+
+
+    .quote {
+        height: fit-content;
+
+
+    }
+
+    blockquote {
+        font-size: calc(var(--fontsize)+7vw);
+
+
+    }
+
+    .login a h4  {
+        font-size: calc(var(--fontsize)+8vw);
+    }
+
+    /*login.html mobile*/
+    
+    main
+    {
+        flex-direction: column;
+    }
+    main div {
+        width: 100%;
+    }
+    main div form
+    {
+        width: 80%;
+    }
+    main div form h4,  input[type="submit"],
+input[type="reset"],.error
+{
+    font-size: calc(var(--fontsize)+8vw);
+
+}
+main span
+{
+    display: none;
+
+}
+.signinlink
+{
+    display: inline;
+    animation:none;
+    border: none;
+    font-size: calc(var(--fontsize)+8vw);
+    color: white;
+}
+.signinform
+{
+    display: none;
+}
+
+
+}
