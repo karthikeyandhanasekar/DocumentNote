@@ -153,13 +153,13 @@ main>div {
 }
 
 
-main span
-{
-    height: 100%;
-    animation: borderanimation 1s linear  .35s ;
+main span {
+    height   : 100%;
+    animation: borderanimation 1s linear .05s;
 
-    border:solid var(--fontcolor);
+    border: solid var(--fontcolor);
 }
+
 main div {
     width: 50%;
 }
@@ -224,8 +224,8 @@ input {
     opacity    : 1;
 
 }
-.signinlink
-{
+
+.signinlink {
     display: none;
 }
 
@@ -256,43 +256,83 @@ input[type="reset"] {
 }
 
 @keyframes borderanimation {
+    0% {
+        transform: translateY(-100%);
+        opacity  : .9;
+    }
+
+    50% {
+        transform: translateY(-50%);
+        opacity  : .5;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity  : 1;
+    }
+
+    
+}
+.loginform
+{
+    animation: lefttoright 1s linear ;
+}
+.signinform
+{
+    animation: righttoleft 1s linear ;
+}
+
+@keyframes lefttoright {
     0%
     {
-        transform: translateY(-100%);
-        opacity: .9;
+        transform: translateX(-100%);
+        
     }
     50%
     {
-        transform: translateY(-50%);
-        opacity: .5;
+        transform: translateX(-50%);
     }
     100%
     {
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateX(0);
     }
     
 }
-
-.show
-{
+@keyframes righttoleft {
+    0%
+    {
+        transform: translateX(100%);
+        
+    }
+    50%
+    {
+        transform: translateX(50%);
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+    
+}
+.show {
     display: block;
 }
-.hide
-{
+
+.hide {
     display: none;
 }
+
 /*mobile css*/
 @media screen and (max-width : 768px) {
 
-   
+
     header {
         font-size: calc(var(--fontsize)+6vw);
-        height: 40vh;
+        height   : 40vh;
 
 
     }
-    
+
 
     .jumbotron {
         height: 100vh;
@@ -308,14 +348,14 @@ input[type="reset"] {
     .links {
         flex-direction: column;
     }
-    .logo
-    {
+
+    .logo {
         margin: 0;
     }
 
     .logo img {
-        width: 100vw;
-        height: 20vw;
+        width  : 100vw;
+        height : 20vw;
         padding: 0;
     }
 
@@ -349,46 +389,48 @@ input[type="reset"] {
 
     }
 
-    .login a h4  {
+    .login a h4 {
         font-size: calc(var(--fontsize)+8vw);
     }
 
     /*login.html mobile*/
-    
-    main
-    {
+
+    main {
         flex-direction: column;
     }
+
     main div {
         width: 100%;
     }
-    main div form
-    {
+
+    main div form {
         width: 80%;
     }
-    main div form h4,  input[type="submit"],
-input[type="reset"],.error
-{
-    font-size: calc(var(--fontsize)+8vw);
 
-}
-main span
-{
-    display: none;
+    main div form h4,
+    input[type="submit"],
+    input[type="reset"],
+    .error {
+        font-size: calc(var(--fontsize)+8vw);
 
-}
-.signinlink
-{
-    display: inline;
-    animation:none;
-    border: none;
-    font-size: calc(var(--fontsize)+8vw);
-    color: white;
-}
-.signinform
-{
-    display: none;
-}
+    }
+
+    main span {
+        display: none;
+
+    }
+
+    .signinlink {
+        display  : inline;
+        animation: none;
+        border   : none;
+        font-size: calc(var(--fontsize)+8vw);
+        color    : white;
+    }
+
+    .signinform {
+        display: none;
+    }
 
 
 }
