@@ -23,7 +23,6 @@ body {
     background-image : url("../images/poster.jpg");
     background-repeat: no-repeat;
     background-size  : cover;
-    height           : 100vh;
 
 }
 
@@ -36,7 +35,6 @@ header {
     display       : flex;
     flex-direction: column;
     font-size     : var(--fontsize);
-    overflow      : hidden;
 }
 
 .links {
@@ -116,7 +114,6 @@ blockquote {
         blinkTextCursor 500ms steps(44) infinite normal;
     text-align : center;
     white-space: nowrap;
-    overflow   : hidden;
     transform  : translateY(-50%);
 }
 
@@ -162,6 +159,7 @@ main span {
 
 main div {
     width: 50%;
+
 }
 
 main div form {
@@ -173,13 +171,15 @@ main div form {
     background-color: var(--bgcolor);
     border-radius   : 5%;
     opacity         : .7;
+    margin-bottom   : 10%;
+
 
 
 
 }
 
 main div form h4 {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     font-size    : calc(var(--fontsize));
     text-align   : center;
     color        : var(--buttoncolor);
@@ -206,6 +206,8 @@ input {
     border-bottom   : groove black;
     color           : black;
     opacity         : 1;
+    margin-bottom   : 10%;
+
 
 
 
@@ -271,49 +273,49 @@ input[type="reset"] {
         opacity  : 1;
     }
 
-    
+
 }
-.loginform
-{
-    animation: lefttoright 1s linear ;
+
+.loginform {
+    animation: lefttoright 1s linear;
 }
-.signinform
-{
-    animation: righttoleft 1s linear ;
+
+.signinform {
+    animation: righttoleft 1s linear;
 }
 
 @keyframes lefttoright {
-    0%
-    {
+    0% {
         transform: translateX(-100%);
-        
+
     }
-    50%
-    {
+
+    50% {
         transform: translateX(-50%);
     }
-    100%
-    {
+
+    100% {
         transform: translateX(0);
     }
-    
+
 }
+
 @keyframes righttoleft {
-    0%
-    {
+    0% {
         transform: translateX(100%);
-        
+
     }
-    50%
-    {
+
+    50% {
         transform: translateX(50%);
     }
-    100%
-    {
+
+    100% {
         transform: translateX(0);
     }
-    
+
 }
+
 .show {
     display: block;
 }
@@ -321,14 +323,23 @@ input[type="reset"] {
 .hide {
     display: none;
 }
-
+/*folders.html*/
+.titlename
+{
+    border: solid red;
+}
 /*mobile css*/
 @media screen and (max-width : 768px) {
 
 
+    body
+    {
+        height: 100%;
+    }
+
     header {
         font-size: calc(var(--fontsize)+6vw);
-        height   : 40vh;
+        height   : 30vh;
 
 
     }
@@ -342,6 +353,11 @@ input[type="reset"] {
     header div {
         margin-bottom: 20%;
 
+    }
+
+    nav ul {
+        display              : grid;
+        grid-template-columns: repeat(2, minmax(auto, 1fr));
     }
 
     nav ul,
@@ -373,7 +389,7 @@ input[type="reset"] {
     nav ul li {
         margin-left: 2%;
         padding    : 1%;
-        width      : 80vw;
+        width      : 50vw;
     }
 
 
@@ -390,18 +406,21 @@ input[type="reset"] {
     }
 
     .login a h4 {
-        font-size: calc(var(--fontsize)+8vw);
+        font-size: calc(var(--fontsize)+7vw);
     }
 
     /*login.html mobile*/
 
     main {
+        padding-top: 10%;
         flex-direction: column;
+        height        : calc(fit-content - 1vh)
     }
 
     main div {
         width: 100%;
     }
+
 
     main div form {
         width: 80%;
@@ -423,14 +442,27 @@ input[type="reset"] {
     .signinlink {
         display  : inline;
         animation: none;
-        border   : none;
         font-size: calc(var(--fontsize)+8vw);
         color    : white;
+        margin:0;
+        border: none;
+        
     }
 
     .signinform {
         display: none;
     }
+    .loginform form input,h4,.buttons
+    {
+        margin-bottom : 1%; 
+
+    }
+    .error
+    {
+        text-align: center;
+        font-size: 1em;
+    }
+    
 
 
 }

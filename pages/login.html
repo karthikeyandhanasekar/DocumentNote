@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>Account</title>
     <link rel="stylesheet" href="../css/index.css">
 
 </head>
+
 <body>
-    <header >
+    <header>
         <div class="links">
             <div class="logo">
 
@@ -30,40 +33,51 @@
         </div>
     </header>
     <main>
-        <div class="loginform" >
+        <div class="loginform">
 
-            <form action="" name="login"  method="post" >
+            <form action="" name="login" id="login" method="post">
                 <h4>Login</h4>
                 <input type="email" name="email" id="loginemail" placeholder="username@email.com" required autofocus>
+                <label for="" class="loginemailerror error"></label>
+
                 <input type="password" name="password" id="loginpassword" placeholder="Password" required>
                 <a href="">ForgotPassword..?</a>
+                <label for="" class="loginpassworderror error"></label>
+
                 <label for="" class="error"></label>
                 <div class="buttons">
-                    <input type="submit" name="login" value="Login" id="login">
-                    <input type="reset" name="reset" value="Reset" >
+                    <input type="submit" name="login" value="Login">
+                    <input type="reset" name="reset" value="Reset">
 
                 </div>
             </form>
 
         </div>
         <span></span>
-        <span class="signinlink">Don't have Create yourself...</span>
-        <div class="signinform" >
+        <span class="signinlink" onclick="return toggleform()">Don't have Create yourself...</span>
+        <div class="signinform">
 
-            <form action="" name="signin"  method="post" >
+            <form action="" method="post" name="signin" id="signin">
                 <h4>Sign-in</h4>
-                <input type="email" name="email" id="signinemail" placeholder="username@email.com" required autofocus>
+                <input type="text" name="username" id="username" placeholder="Username" required autofocus>
+
+                <input type="email" name="email" id="signinemail" placeholder="username@email.com" required>
+                <label for="" class="emailerror error"></label>
+
                 <input type="password" name="password" id="signinpassword" placeholder="Password" required>
-                <label for="" class="error"></label>
+                <label for="" class="passworderror error"></label>
                 <div class="buttons">
-                    <input type="submit" name="signin" value="Signin" id="signin">
-                    <input type="reset" name="reset" value="Reset" >
+                    <input type="submit" name="signin" value="Signin">
+                    <input type="reset" name="reset" value="Reset">
 
                 </div>
             </form>
         </div>
 
     </main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script src="../js/index.js"></script>
 </body>
+
 </html>
