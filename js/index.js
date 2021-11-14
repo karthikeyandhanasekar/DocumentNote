@@ -65,7 +65,7 @@ setInterval(digitalclock, 1000)
 */
 
 //get currentimestamp
-const currenttimestamp = () => {
+ const currenttimestamp = () => {
     let date = new Date()
     return date.valueOf()
 }
@@ -140,6 +140,19 @@ const getstudentuser = async () => {
 
 }
 
+const updatestudentuser = async ({id,data}) => {
+    try {
+        let api = await axios.put(`https://618dce1ffe09aa00174408ad.mockapi.io/StudentUsers/${id}`, { data })
+        if (api.status === 201)
+            return true
+
+        return false
+    } catch (error) {
+
+    }
+
+
+}
 
 //signin process
 const signin = async (event) => {
@@ -227,7 +240,7 @@ const login = async (event) => {
         if (existuser.data[email].password === password) {
             document.querySelector(".loginpassworderror").innerHTML = ""
 
-            window.location.href = `folders.html?email=${form.email.value}&username=${existuser.data[email].password}`
+            window.location.href = `folders.html?email=${form.email.value}&username=${existuser.data[email].username}`
         }
         else {
             document.querySelector(".loginpassworderror").innerHTML = "Invalid Password"
