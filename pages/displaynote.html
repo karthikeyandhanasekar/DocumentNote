@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <header>
+        <div class="links">
+            <div class="logo">
+
+                <img src="../images/logo.webp" loading="lazy" alt="DocumentNote">
+            </div>
+            <div>
+                <nav class="navcontainer">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="">To-Do List</a> </li>
+                        <li><a href="">Pricing</a> </li>
+                        <li><a href="" class="tofolder">Folders</a> </li>
+
+                        <li><a href="" class="tonote">Notes</a> </li>
+
+                        <li><a href="../index.html" class="logout">Logout</a> </li>
+
+
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+    </header>
+    <main class="displaynote">
+        <div class="displaycontent contents">
+        </div>
+        <span class="notebutton">
+            <button class="noteupdate">Update</button>
+            <button class="notedelete">Delete</button>
+            <button class="speakcontent"> Speak</button>
+            <button class="sharecontent">Share</button>
+
+        </span>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="../js/displaynote.js"></script>
+</body>
+
+</html>

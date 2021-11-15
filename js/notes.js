@@ -76,12 +76,13 @@ const renderfolder = async () => {
         })
         userdata.reverse()
         userdata.map(ele => {
+           // console.log(ele.id);
             const name = Object.keys(ele.data)[0].split("-")[2];
             const content = ele.data[Object.keys(ele.data)[0]].content
             const createat = dateformat(ele.data[Object.keys(ele.data)[0]].createdAt)
             console.log(createat);
             folderdiv += `
-            <div class="folder" id="${name}" onclick="return gotonotes(this)" >
+            <div class="folder" id="${ele.id}+${name}" onclick="return gotonotes(this)" >
             <p class="foldertitle">${name}</p>
             <p class="createdat">${createat}</p>
         </div>`
@@ -170,5 +171,12 @@ document.querySelector(".close").addEventListener("click", closemodal)
 
 
 
+const gotonotes = (value) =>
+{
+    const params =  (value.id).split("+")
+    const url = `displaynote.html?email=${useremail}&username=${username}&note=${params[1]}&id=${params[0]}&folder=${folder}`
+    console.log(url);
+    window.location.href=url
+}
 
 

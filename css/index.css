@@ -444,15 +444,15 @@ input[type="reset"] {
 }
 
 .addnote {
-    opacity: .5;
+    opacity       : .5;
     padding-bottom: 1%;
-    top    : 1%;
-    left   : 20%;
-    height : 90%;
-    width  : 50%;
+    top           : 1%;
+    left          : 20%;
+    height        : 90%;
+    width         : 50%;
 }
-.addnote textarea
-{
+
+.addnote textarea {
     overflow: auto;
 }
 
@@ -491,6 +491,61 @@ input[type="reset"] {
     }
 
 }
+
+/*displaynote.html*/
+.displaynote,
+.notebutton {
+    display: flex;
+    padding: 1%;
+    margin : 1%;
+    border : none;
+}
+
+.displaynote div {
+    height: 100%;
+
+}
+
+.displaycontent {
+    width: 90%;
+}
+
+.notebutton {
+    flex-direction : column;
+    justify-content: space-between;
+    align-items    : center;
+    width          : 20%;
+    animation      : none;
+
+}
+
+.notebutton button {
+    font-size       : var(--fontsize);
+    padding         : 1%;
+    width           : 8vw;
+    color           : var(--bgcolor);
+    border-radius   : 8%;
+    border          : none;
+    background-color: var(--buttoncolor);
+    cursor          : pointer;
+    height          : fit-content;
+
+
+}
+
+.contents {
+    display         : block;
+    background-color: var(--bgcolor);
+    width           : 100%;
+    font-size       : 2vw;
+    overflow        : scroll;
+    text-align      : justify;
+    line-height     : 1.5;
+    padding         : 1%;
+    border          : none;
+    border-radius   : 1%
+}
+
 
 /*-------------------------------------------mobile---------------------------------------------*/
 
@@ -693,28 +748,79 @@ input[type="reset"] {
 
 
     .addfolder input,
-    .addfolder button ,.addnote textarea {
+    .addfolder button,
+    .addnote textarea {
         font-size: calc(var(--fontsize)+8vw);
 
     }
-    .addnote 
-    {
+
+    .addnote {
         opacity: 1;
     }
-    .addnote textarea
-    {
+
+    .addnote textarea {
         margin-bottom: 5%;
 
     }
 
-    .foldernameerror,.contenterror,.notenameerror {
+    .foldernameerror,
+    .contenterror,
+    .notenameerror {
         font-size : 4vw;
         text-align: center;
     }
-    .addfolder button 
-    {
-        margin-left: 20%;
+
+    .addfolder button {
+        margin-left  : 20%;
         margin-bottom: 5%;
+    }
+
+    .displaynote {
+        display       : flex;
+        flex-direction: column-reverse;
+        padding       : 1%;
+        margin        : 1%;
+        margin-top    : 1%;
+    }
+
+    .displaynote div {
+        width: 100%;
+
+
+    }
+
+
+    .notebutton {
+        display              : grid;
+        grid-template-columns: repeat(4, minmax(auto, 1fr));
+        width                : 100%;
+        margin               : 2%;
+        padding              : 2%;
+        height               : fit-content;
+
+    }
+
+
+    .notebutton button {
+
+        font-size       : calc(var(--fontsize)+5vw);
+        padding         : 1%;
+        width           : fit-content;
+        color           : var(--bgcolor);
+        border-radius   : 8%;
+        background-color: var(--buttoncolor);
+        cursor          : pointer;
+        height          : fit-content;
+
+
+    }
+
+    .contents {
+
+        font-size : 5vw;
+        height    : 120%;
+        margin-top: 5%;
+
     }
 
 }

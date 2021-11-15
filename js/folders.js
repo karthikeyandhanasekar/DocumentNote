@@ -166,6 +166,7 @@ document.querySelector(".close").addEventListener("click", closemodal)
 
 const gotonotes = (value) => {
     console.log(value.id);
+    console.log(`notes.html?email=${useremail}&folder=${value.id}&username=${username}`);
     window.location.href = `notes.html?email=${useremail}&folder=${value.id}&username=${username}`
 }
 
