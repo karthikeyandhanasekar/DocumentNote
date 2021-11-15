@@ -67,12 +67,10 @@ const renderfolder = async () => {
 
             let temp = ele.data[useremail]
             let foldername = Object.keys(temp)[0]
-            let notecount = temp[foldername]["notes"].length
             let createat = dateformat(temp[foldername]["createdAt"])
             folder += `
             <div class="folder" id="${foldername}" onclick="return gotonotes(this)" >
             <p class="foldertitle">${foldername}</p>
-            <p class="note">${notecount} &nbsp Notes </p>
             <p class="createdat">${createat}</p>
         </div>`
 
