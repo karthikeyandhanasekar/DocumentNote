@@ -51,18 +51,6 @@ const toggleform = () => {
 }
 
 
-/*
-//digitalclock
-const digitalclock = () => {
-    let date = new Date()
-
-    let format = `${date.getHours() < 10 ? '0' + date.getHours() : date.getHours()} : ${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()} : ${date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()}`
-
-    document.querySelector(".time").innerHTML = format
-
-}
-setInterval(digitalclock, 1000)
-*/
 
 //get currentimestamp
  const currenttimestamp = () => {
@@ -71,7 +59,6 @@ setInterval(digitalclock, 1000)
 }
 
 
-//intialize mockapi
 
 
 //validpassword
@@ -91,7 +78,7 @@ const isemailexists = ({ email, newemail }) => {
     let result = email.filter((ele) =>
         ele === newemail
     )
-    console.log(result);
+    //console.log(result);
     if (result.length === 0)
         return false
     return true
@@ -105,10 +92,7 @@ const studentusers = async () => {
         return api.data
     } catch (error) {
         console.log(error);
-
     }
-
-
 }
 
 window.onload = () => studentusers()
@@ -140,19 +124,7 @@ const getstudentuser = async () => {
 
 }
 
-const updatestudentuser = async ({id,data}) => {
-    try {
-        let api = await axios.put(`https://618dce1ffe09aa00174408ad.mockapi.io/StudentUsers/${id}`, { data })
-        if (api.status === 201)
-            return true
 
-        return false
-    } catch (error) {
-
-    }
-
-
-}
 
 //signin process
 const signin = async (event) => {
@@ -176,30 +148,30 @@ const signin = async (event) => {
         console.log(emailexist);
 
 
-        if (emailexist.length != 0) {
+        
             if (isemailexists({ email: emailexist, newemail: form.email.value }))
+            {
                 document.querySelector(".emailerror").innerHTML = "Email Already exists"
+                return
+            }
             
 
             else if (!isvalidpassword(form.password.value))
             {
                 document.querySelector(".emailerror").innerHTML = ""
                 document.querySelector(".passworderror").innerHTML = "Password should between 8 & 15 characters  "
+                return
             }
             else {
+                console.log("everything valid");
                 poststudentuser(createuser) ? window.location.href = `folders.html?email=${form.email.value}&username=${form.username.value}` : alert("post fail")
 
             }
-        }
-        else {
+               
             document.querySelector(".emailerror").innerHTML = ""
-            console.log(document.querySelector(".emailerror").innerHTML);
-
             document.querySelector(".passworderror").innerHTML = ""
-
-            poststudentuser(createuser) ? window.location.href = `folders.html?email=${form.email.value}&username=${form.username.value}` : alert("post fail")
-
-        }
+           // poststudentuser(createuser) ? window.location.href = `folders.html?email=${form.email.value}&username=${form.username.value}` : alert("post fail")
+        
         window.onload = () => signin()
 
     } catch (error) {
@@ -220,11 +192,7 @@ const login = async (event) => {
         let email = form.email.value
         let password = form.password.value
 
-
-
-
         let users = await getstudentuser()
-        //console.log(users);
 
         let existuser = users.filter(ele => {
             let key = Object.keys(ele.data)[0]
@@ -246,19 +214,12 @@ const login = async (event) => {
             document.querySelector(".loginpassworderror").innerHTML = "Invalid Password"
         }
 
-
         window.onload = () => login()
-
-
-
-
 
     } catch (error) {
         console.log(error);
 
     }
-
-
 }
 
 //call signinprocess

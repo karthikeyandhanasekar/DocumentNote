@@ -339,6 +339,8 @@ input[type="reset"] {
     padding              : 1%;
     gap                  : 1%;
     scroll-behavior      : smooth;
+    animation            : folderdisplay .9s linear;
+
 
 
 }
@@ -355,7 +357,6 @@ input[type="reset"] {
     justify-content : space-evenly;
     font-size       : var(--fontsize);
     color           : rgb(122, 0, 24);
-    animation       : folderdisplay .9s linear;
 }
 
 
@@ -410,10 +411,12 @@ input[type="reset"] {
 
 }
 
-.addfolder input {
+.addfolder input,
+.addnote textarea {
     width      : 70%;
     margin-left: 10%;
     font-size  : var(--fontsize);
+    padding    : 2%;
 
 }
 
@@ -430,9 +433,30 @@ input[type="reset"] {
     cursor          : pointer;
 }
 
+.addnote button {
+    margin-left : 40%;
+    margin-right: 40%;
+
+}
+
 .addfolder :placeholder-shown {
     color: white;
 }
+
+.addnote {
+    opacity: .5;
+    padding-bottom: 1%;
+    top    : 1%;
+    left   : 20%;
+    height : 90%;
+    width  : 50%;
+}
+.addnote textarea
+{
+    overflow: auto;
+}
+
+
 
 .close {
     text-align   : right;
@@ -445,24 +469,30 @@ input[type="reset"] {
     border-radius   : 5%;
 }
 
+.foldernameerror {
+    font-size : 1vw;
+    text-align: center;
+}
+
 @keyframes folderdisplay {
     0% {
         opacity  : .2;
-        transform: scale(0);
+        transform: translateX(-100%)
     }
 
     50% {
         opacity  : .5;
-        transform: scale(.5);
+        transform: translateX(-50%)
     }
 
     100% {
         opacity  : 1;
-        transform: scale(1);
-
+        transform: translateX()
     }
 
 }
+
+/*-------------------------------------------mobile---------------------------------------------*/
 
 /*mobile css*/
 @media screen and (max-width : 768px) {
@@ -663,9 +693,28 @@ input[type="reset"] {
 
 
     .addfolder input,
-    .addfolder button {
+    .addfolder button ,.addnote textarea {
         font-size: calc(var(--fontsize)+8vw);
 
+    }
+    .addnote 
+    {
+        opacity: 1;
+    }
+    .addnote textarea
+    {
+        margin-bottom: 5%;
+
+    }
+
+    .foldernameerror,.contenterror,.notenameerror {
+        font-size : 4vw;
+        text-align: center;
+    }
+    .addfolder button 
+    {
+        margin-left: 20%;
+        margin-bottom: 5%;
     }
 
 }

@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="titlename">Folders</title>
+    <title class="notename"></title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/index.css">
-
 </head>
 
 <body>
@@ -25,6 +24,8 @@
                         <li><a href="">To-Do List</a> </li>
                         <li><a href="">Pricing</a> </li>
                         <li><a href="">Support</a> </li>
+                        <li><a href="" class="tofolder">Folders</a> </li>
+
                         <li><a href="../index.html" class="logout">Logout</a> </li>
 
 
@@ -35,12 +36,17 @@
         </div>
 
     </header>
+
     <div class="modal">
-        <div class="addfolder">
+        <div class="addfolder addnote">
             <span class="close">X</span>
 
-            <input type="text" name="foldername" placeholder="FolderName" id="foldername" required autofocus>
-            <label class="foldernameerror error"></label>
+            <input type="text" name="notename" placeholder="notename" id="notename" required autofocus>
+            <label class="notenameerror error"></label>
+            <textarea class="content" rows="25" placeholder="content" placeholder="description" id="content"
+                required></textarea>
+            <label class="contenterror error"></label>
+
             <button type="submit" class="addf">Add</button>
         </div>
     </div>
@@ -52,10 +58,10 @@
         </div>
     </main>
 
-   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <script src="../js/folders.js"></script>
+    <script src="../js/notes.js"></script>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </body>
 
