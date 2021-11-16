@@ -461,6 +461,7 @@ input[type="reset"] {
 .close {
     text-align   : right;
     padding-right: 5%;
+    cursor: pointer;
 }
 
 .logout {
