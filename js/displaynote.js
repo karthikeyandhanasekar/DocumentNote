@@ -106,6 +106,7 @@ const confirmupdate = async () => {
 let editable = false
 const updatecontent = async () => {
     try {
+        document.querySelector(".updatedeletenote").innerHTML = ''
 
         let temp = ""
         let contentui = document.querySelector(".contents")
@@ -126,26 +127,28 @@ const updatecontent = async () => {
 
             if (oldcontent === newcontent) {
 
-                temp = '<h5>Nothing Changed to Update</h5>'
+                alert('Nothing Changed to Update')
+                document.querySelector(".noteupdate").innerHTML = "Update"
+                document.querySelector(".noteupdate").style.backgroundColor = "#dc143c"
+                return
             }
             else {
-                temp = ''
-
-                temp = '<h6>Confirm for updation....</h6><br>'
-                temp += '<button onclick="return confirmupdate()">Confirm</button>'
+                temp = `
+              
+                    <span class="close" onclick="return closemodal()">X</span>
+                    <h6 class="confirmessage">Confirm for updation</h6><br>
+                    <button onclick="return confirmupdate()">Confirm</button>`
 
             }
-
-
             displaymodal()
             document.querySelector(".updatedeletenote").innerHTML += temp
 
 
-
-
-
             document.querySelector(".noteupdate").innerHTML = "Update"
             document.querySelector(".noteupdate").style.backgroundColor = "#dc143c"
+
+
+
         }
     } catch (error) {
         console.log(error);
@@ -174,8 +177,11 @@ const confirmdelete = async () => {
 
 const deletecontent = () => {
     displaymodal()
-    const temp = `<h6>Confirm for delete....</h6><br>
-    <button onclick="return confirmdelete()">Confirm</button>`
+    document.querySelector(".updatedeletenote").innerHTML = ''
+    const temp = `
+    <span class="close" onclick="return closemodal()">X</span>
+                    <h6 class="confirmessage">Confirm for Deletion</h6><br>
+                    <button onclick="return confirmdelete()">Confirm</button>`
     document.querySelector(".updatedeletenote").innerHTML = temp
 
 
@@ -190,3 +196,42 @@ document.querySelector(".notedelete").addEventListener("click", deletecontent)
 const closemodal = () => {
     document.querySelector(".modal").style.display = "none"
 }
+let talk = false
+const voicelist = responsiveVoice.getVoices();
+//console.log(voicelist);
+
+
+const texttospeech = () => {
+
+    talk = !talk
+    if (talk) {
+
+
+        responsiveVoice.speak(document.querySelector(".contents").textContent, "UK English Male", { rate: .8 });
+    }
+    else {
+
+        if (responsiveVoice.isPlaying()) {
+            //   console.log("pause");
+            responsiveVoice.pause()
+        }
+
+    }
+
+
+
+}
+// global array
+document.querySelector(".speakcontent").addEventListener("click", texttospeech)
+
+
+const sharecontent = () =>
+{
+    const whatsAppURL = `https://wa.me?text=${encodeURIComponent(document.querySelector(".contents").textContent)}`;
+console.log(whatsAppURL);
+    window.open(whatsAppURL)
+
+}
+
+
+document.querySelector(".sharecontent").addEventListener("click",sharecontent)

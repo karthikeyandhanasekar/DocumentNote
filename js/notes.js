@@ -140,15 +140,14 @@ const addnote = async () => {
             createdAt: currenttimestamp()
         }
     }
-     console.log(usernote);
 
     if (note.length !== 0) {
         console.log("going topost");
         document.querySelector(".notenameerror").style.display = "none"
-        postcontent(usernote) ? alert("note created") : alert("failure")
+       await postcontent(usernote) ? renderfolder() : alert("failure")
 
         closemodal()
-        renderfolder()
+        
 
     }
     else {

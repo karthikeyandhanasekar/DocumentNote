@@ -546,7 +546,10 @@ input[type="reset"] {
     border          : none;
     border-radius   : 1%
 }
-
+.confirmessage
+{
+  text-align: center;
+}
 
 /*-------------------------------------------mobile---------------------------------------------*/
 
@@ -821,6 +824,11 @@ input[type="reset"] {
         font-size : 5vw;
         height    : 120%;
         margin-top: 5%;
+
+    }
+    .confirmessage
+    {
+        font-size : 5vw;
 
     }
 

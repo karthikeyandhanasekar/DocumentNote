@@ -1,39 +1,40 @@
 //toggle form in mobile 
 let state = false
 const toggleform = () => {
-    let loginform = `
-<form action="" name="login"  method="post" >
+    const loginform = `
+    <form action="" name="login" id="login" method="post">
     <h4>Login</h4>
     <input type="email" name="email" id="loginemail" placeholder="username@email.com" required autofocus>
+    <label for="" class="loginemailerror error"></label>
+
     <input type="password" name="password" id="loginpassword" placeholder="Password" required>
     <a href="">ForgotPassword..?</a>
+    <label for="" class="loginpassworderror error"></label>
+
     <label for="" class="error"></label>
     <div class="buttons">
-        <input type="submit" name="login" value="Login" id="login">
-        <input type="reset" name="reset" value="Reset" >
+        <input type="submit" name="login" value="Login">
+        <input type="reset" name="reset" value="Reset">
 
     </div>
 </form>`
-    const singinform = `
-    
-    <form  method="post" name="signin" id="signin"   >
+    const singinform = ` <form action="" method="post" name="signin" id="signin">
     <h4>Sign-in</h4>
-    <input type="text" name="username" id="username" placeholder="Username" required autofocus value="karhtik">
+    <input type="text" name="username" id="username" placeholder="Username" required autofocus>
 
-    <input type="email" name="email" id="signinemail" placeholder="username@email.com" required  value="karthik@gmail.com">
+    <input type="email" name="email" id="signinemail" placeholder="username@email.com" required>
     <label for="" class="emailerror error"></label>
 
-    <input type="password" name="password" id="signinpassword" placeholder="Password" required value="123456789">
+    <input type="password" name="password" id="signinpassword" placeholder="Password" required>
     <label for="" class="passworderror error"></label>
     <div class="buttons">
-        <input type="submit" name="signin" value="Signin"  >
-        <input type="reset" name="reset" value="Reset" >
+        <input type="submit" name="signin" value="Signin">
+        <input type="reset" name="reset" value="Reset">
 
     </div>
 </form>`
     state = !state
     if (state) {
-        console.log(singinform);
         //need to check this in future
         document.querySelector(".signinlink").innerHTML = ''
 
@@ -53,7 +54,7 @@ const toggleform = () => {
 
 
 //get currentimestamp
- const currenttimestamp = () => {
+const currenttimestamp = () => {
     let date = new Date()
     return date.valueOf()
 }
@@ -63,7 +64,6 @@ const toggleform = () => {
 
 //validpassword
 const isvalidpassword = (value) => {
-    // console.log(value.length);
     let pattern = new RegExp('[A-Za-z0-9]', 'g')
     if (pattern.test(value) && value.length > 7 && value.length < 16)
         return true
@@ -78,7 +78,6 @@ const isemailexists = ({ email, newemail }) => {
     let result = email.filter((ele) =>
         ele === newemail
     )
-    //console.log(result);
     if (result.length === 0)
         return false
     return true
@@ -88,7 +87,6 @@ const isemailexists = ({ email, newemail }) => {
 const studentusers = async () => {
     try {
         let api = await axios.get('https://618dce1ffe09aa00174408ad.mockapi.io/StudentUsers')
-        // console.log(api.data);
         return api.data
     } catch (error) {
         console.log(error);
@@ -145,33 +143,29 @@ const signin = async (event) => {
         let users = await getstudentuser()
 
         let emailexist = (users.map(ele => Object.keys(ele.data))).flat(1);
-        console.log(emailexist);
 
 
-        
-            if (isemailexists({ email: emailexist, newemail: form.email.value }))
-            {
-                document.querySelector(".emailerror").innerHTML = "Email Already exists"
-                return
-            }
-            
 
-            else if (!isvalidpassword(form.password.value))
-            {
-                document.querySelector(".emailerror").innerHTML = ""
-                document.querySelector(".passworderror").innerHTML = "Password should between 8 & 15 characters  "
-                return
-            }
-            else {
-                console.log("everything valid");
-                poststudentuser(createuser) ? window.location.href = `folders.html?email=${form.email.value}&username=${form.username.value}` : alert("post fail")
+        if (isemailexists({ email: emailexist, newemail: form.email.value })) {
+            document.querySelector(".emailerror").innerHTML = "Email Already exists"
+            return
+        }
 
-            }
-               
+
+        else if (!isvalidpassword(form.password.value)) {
             document.querySelector(".emailerror").innerHTML = ""
-            document.querySelector(".passworderror").innerHTML = ""
-           // poststudentuser(createuser) ? window.location.href = `folders.html?email=${form.email.value}&username=${form.username.value}` : alert("post fail")
-        
+            document.querySelector(".passworderror").innerHTML = "Password should between 8 & 15 characters  "
+            return
+        }
+        else {
+            await poststudentuser(createuser) ? window.location.href = `folders.html?email=${form.email.value}&username=${form.username.value}` : alert("post fail")
+
+        }
+
+        document.querySelector(".emailerror").innerHTML = ""
+        document.querySelector(".passworderror").innerHTML = ""
+        // poststudentuser(createuser) ? window.location.href = `folders.html?email=${form.email.value}&username=${form.username.value}` : alert("post fail")
+
         window.onload = () => signin()
 
     } catch (error) {
@@ -185,7 +179,7 @@ const signin = async (event) => {
 //login
 const login = async (event) => {
     try {
-            event.preventDefault()
+        event.preventDefault()
         let form = document.forms['login']
         console.log(form);
 
@@ -202,7 +196,7 @@ const login = async (event) => {
         if (existuser === undefined)
             document.querySelector(".loginemailerror").innerHTML = "Email Not Found"
         else
-        document.querySelector(".loginemailerror").innerHTML = ""
+            document.querySelector(".loginemailerror").innerHTML = ""
 
 
         if (existuser.data[email].password === password) {

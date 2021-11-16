@@ -117,9 +117,8 @@ const addfolder = async () => {
     let existemail = new Set(data.map(ele => Object.keys(ele.data)[0]))
     let checkemail = [...existemail].filter(ele => useremail === ele)
     if (checkemail.length === 0) {
-        poststudentnotes(userfolder) ? alert("sucess") : alert("failure")
+    await    poststudentnotes(userfolder) ? renderfolder() : alert("failure")
         closemodal()
-        renderfolder()
         return
     }
 
@@ -137,10 +136,9 @@ const addfolder = async () => {
         document.querySelector(".foldernameerror").style.display = "none"
 
 
-        poststudentnotes(userfolder) ? alert("sucess") : alert("failure")
+        await poststudentnotes(userfolder) ? renderfolder() : alert("failure")
 
         closemodal()
-        renderfolder()
 
     }
     else {
