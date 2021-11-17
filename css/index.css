@@ -410,11 +410,12 @@ input[type="reset"] {
 
 }
 
-.addfolder input .addnote textarea {
-    width      : 70%;
+.addfolder input, .addnote textarea {
+    width      : 80%;
     margin-left: 10%;
     font-size  : var(--fontsize);
     padding    : 2%;
+
 
 }
 
@@ -452,6 +453,7 @@ input[type="reset"] {
 
 .addnote textarea {
     overflow: auto;
+
 }
 
 
@@ -605,7 +607,7 @@ main form {
     border          : none;
     margin          : 1%;
     background-color: green;
-    padding: 5%;
+    padding         : 5%;
 }
 
 .price {
@@ -624,9 +626,9 @@ main form {
     padding        : 1%;
     justify-content: center;
 }
-h1 span
-{
-    border: none;
+
+h1 span {
+    border   : none;
     font-size: 1vw;
 }
 
@@ -921,7 +923,8 @@ h1 span
     }
 
 
-    .notebutton button ,.button button{
+    .notebutton button,
+    .button button {
 
         font-size       : calc(var(--fontsize)+5vw);
         padding         : 1%;
@@ -947,20 +950,21 @@ h1 span
         font-size: 5vw;
 
     }
+
     .prices {
 
-        flex-direction: column;
-        width      : 100%;
+        flex-direction : column;
+        width          : 100%;
         justify-content: flex-start;
-        
-        overflow-y : scroll;
-        height     : 100%;
-        padding    : 2%;
-    
+
+        overflow-y: scroll;
+        height    : 100%;
+        padding   : 2%;
+
     }
-    .prices div
-    {
-        width: 90%;
+
+    .prices div {
+        width        : 90%;
         margin-bottom: 5%;
     }
 
