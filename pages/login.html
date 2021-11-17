@@ -22,7 +22,7 @@
                 <nav class="navcontainer">
                     <ul>
                         <li><a href="../index.html">Home</a></li>
-                        <li><a href="">To-Do List</a> </li>
+                        <li><a href="" >To-Do List</a> </li>
                         <li><a href="">Pricing</a> </li>
                         <li><a href="">Support</a> </li>
 
@@ -30,6 +30,12 @@
                 </nav>
             </div>
 
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
     </header>
     <main>
@@ -53,9 +59,7 @@
             </form>
 
         </div>
-        <span></span>
-        <span class="signinlink" onclick="return toggleform()">Don't have Create yourself...</span>
-        <div class="signinform">
+        <div class="signinform hide">
 
             <form action="" method="post" name="signin" id="signin">
                 <h4>Sign-in</h4>
@@ -73,6 +77,8 @@
                 </div>
             </form>
         </div>
+        <span class="signinlink" onclick="return toggleform()">Create account</span>
+
 
     </main>
     <script  src="https://unpkg.com/axios/dist/axios.min.js"></script>

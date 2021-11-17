@@ -8,6 +8,14 @@ const folder = search.get("folder")
 document.title = notename
 let oldcontent = ''
 
+const displaynav = () =>
+{
+    document.querySelector("nav").classList.toggle("show")
+}
+
+
+document.querySelector(".burger").addEventListener("click",displaynav)
+
 document.querySelector(".tofolder").href = `folders.html?email=${useremail}&username=${username}`
 document.querySelector(".tonote").href = `notes.html?email=${useremail}&folder=${folder}&username=${username}`
 console.log(document.querySelector(".tonote").href);

@@ -1,56 +1,26 @@
 //toggle form in mobile 
-let state = false
+
 const toggleform = () => {
-    const loginform = `
-    <form action="" name="login" id="login" method="post">
-    <h4>Login</h4>
-    <input type="email" name="email" id="loginemail" placeholder="username@email.com" required autofocus>
-    <label for="" class="loginemailerror error"></label>
 
-    <input type="password" name="password" id="loginpassword" placeholder="Password" required>
-    <a href="">ForgotPassword..?</a>
-    <label for="" class="loginpassworderror error"></label>
+    console.log("toggleform");
+    document.querySelector(".loginform").classList.toggle("hide")
+    document.querySelector(".signinform").classList.toggle("hide",)
+    let msg = document.querySelector(".signinlink")
+    if (msg.innerHTML === 'Create account')
+    msg.innerHTML = 'Already have account?..Login'
+    else
+    msg.innerHTML='Create account'
 
-    <label for="" class="error"></label>
-    <div class="buttons">
-        <input type="submit" name="login" value="Login">
-        <input type="reset" name="reset" value="Reset">
 
-    </div>
-</form>`
-    const singinform = ` <form action="" method="post" name="signin" id="signin">
-    <h4>Sign-in</h4>
-    <input type="text" name="username" id="username" placeholder="Username" required autofocus>
 
-    <input type="email" name="email" id="signinemail" placeholder="username@email.com" required>
-    <label for="" class="emailerror error"></label>
-
-    <input type="password" name="password" id="signinpassword" placeholder="Password" required>
-    <label for="" class="passworderror error"></label>
-    <div class="buttons">
-        <input type="submit" name="signin" value="Signin">
-        <input type="reset" name="reset" value="Reset">
-
-    </div>
-</form>`
-    state = !state
-    if (state) {
-        //need to check this in future
-        document.querySelector(".signinlink").innerHTML = ''
-
-        document.querySelector(".loginform").innerHTML = singinform
-        document.querySelector(".signinlink").innerHTML = "Don't have Create yourself..."
-
-    }
-    else {
-        document.querySelector(".signinlink").innerHTML = ''
-
-        document.querySelector(".loginform").innerHTML = loginform
-        document.querySelector(".signinlink").innerHTML = "Had then..educate yourself"
-
-    }
 }
 
+const displaynav = () => {
+    document.querySelector("nav").classList.toggle("show")
+}
+
+
+document.querySelector(".burger").addEventListener("click", displaynav)
 
 
 //get currentimestamp

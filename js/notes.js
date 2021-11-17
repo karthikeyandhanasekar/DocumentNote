@@ -5,6 +5,15 @@ const folder = search.get("folder")
 const username = search.get("username")
 document.title = folder
 
+
+const displaynav = () =>
+{
+    document.querySelector("nav").classList.toggle("show")
+}
+
+
+document.querySelector(".burger").addEventListener("click",displaynav)
+
 //url back to folder
 document.querySelector(".tofolder").href = `folders.html?email=${useremail}&username=${username}`
 

@@ -7,6 +7,14 @@ const useremail = search.get("email")
 document.title = username
 
 
+const displaynav = () =>
+{
+    document.querySelector("nav").classList.toggle("show")
+}
+
+
+document.querySelector(".burger").addEventListener("click",displaynav)
+
 //get currentimestamp
 const currenttimestamp = () => {
     let date = new Date()
