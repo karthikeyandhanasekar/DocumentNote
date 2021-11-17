@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <header>
+        <div class="links">
+            <div class="logo">
+
+                <img src="../images/logo.webp" loading="lazy" alt="DocumentNote">
+            </div>
+            <div>
+                <nav class="navcontainer">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="pages/pricing.html">Pricing</a> </li>
+                        <li><a href="">Support</a> </li>
+
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <main class="pricing">
+        <div class="prices">
+            <div>
+                <div class="planname">
+                    <h1>DocumentNote Free</h1>
+                </div>
+                <div class="price">
+                    <h1>FREE</h1>
+                </div>
+                <div class="features">
+                    <ul>
+                        <li>100 Notes Per Folder</li>
+                        <li>10 Folders</li>
+                        <li>Single Voice Speech</li>
+                        <li>Share via whatsapp only</li>
+                        <li>No Collaborations</li>
+                        <li>Limited Storage</li>
+                    </ul>
+                </div>
+                <div class="button">
+                    <button>Free Trail</button>
+                </div>
+            </div>
+                <div>
+                    <div class="planname">
+                        <h1>DocumentNote Pro</h1>
+                    </div>
+                    <div class="price">
+                        <h1>$39 <span>/per month</span></h1>
+                    </div>
+                    <div class="features">
+                        <ul>
+                            <li>200 Notes Per Folder</li>
+                            <li>100 Folders</li>
+                            <li>Multiple Voice Speech</li>
+                            <li>Share via thrid-party</li>
+                            <li>Five User Collaborations</li>
+                            <li>Limited Storage</li>
+                        </ul>
+                    </div>
+                    <div class="button">
+                        <button>Try Pro</button>
+                    </div>
+                    </div>
+                    <div>
+                        <div class="planname">
+                            <h1>DocumentNote Enterprise</h1>
+                        </div>
+                        <div class="price">
+                            <h1>$150 <span>/per month</span></h1>
+                        </div>
+                        <div class="features">
+                            <ul>
+                                <li>Unlimited Notes Per Folder</li>
+                                <li>UnlimitedFolders</li>
+                                <li>Multiple Voice Speech</li>
+                                <li>Share via thrid-party</li>
+                                <li>Within Organization</li>
+                                <li>Unlimited Storage</li>
+                            </ul>
+                        </div>
+                        <div class="button">
+                            <button>Try Enterprise</button>
+                        </div>
+                
+
+
+        </div>
+        
+    </main>
+
+    <script type="text/javascript">
+
+        const displaynav = () => {
+            document.querySelector("nav").classList.toggle("show")
+        }
+
+
+        document.querySelector(".burger").addEventListener("click", displaynav)
+    </script>
+</body>
+
+</html>

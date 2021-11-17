@@ -166,7 +166,8 @@ main div {
 
 }
 
-main div form ,main form{
+main div form,
+main form {
     display         : flex;
     flex-direction  : column;
     border          : groove;
@@ -409,8 +410,7 @@ input[type="reset"] {
 
 }
 
-.addfolder input
-.addnote textarea {
+.addfolder input .addnote textarea {
     width      : 70%;
     margin-left: 10%;
     font-size  : var(--fontsize);
@@ -518,7 +518,8 @@ input[type="reset"] {
 
 }
 
-.notebutton button {
+.notebutton button,
+.button button {
     font-size       : var(--fontsize);
     padding         : 1%;
     width           : 8vw;
@@ -552,9 +553,81 @@ input[type="reset"] {
 .show {
     display: block;
 }
-main form
-{
+
+main form {
     width: 30vw;
+}
+
+/*pricing.html*/
+
+
+.prices {
+
+    display    : flex;
+    align-items: flex-start;
+    width      : 100%;
+    overflow-x : scroll;
+    height     : 100%;
+    padding    : 2%;
+
+}
+
+.prices>div {
+
+    display         : flex;
+    flex-direction  : column;
+    background-color: var(--bgcolor);
+    justify-content : flex-start;
+    padding         : 3%;
+    height          : 100%;
+    text-align      : center;
+    width           : 30%;
+    border-radius   : 10%;
+    margin-left     : 2%;
+
+
+}
+
+.planname,
+.price,
+.features,
+.button {
+    border-bottom  : groove;
+    width          : 100%;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    height         : 45%;
+}
+
+.button button {
+    width           : fit-content;
+    border          : none;
+    margin          : 1%;
+    background-color: green;
+    padding: 5%;
+}
+
+.price {
+    color: green;
+}
+
+.features ul li {
+    text-align     : justify;
+    list-style-type: '✔';
+
+
+}
+
+.features {
+    display        : flex;
+    padding        : 1%;
+    justify-content: center;
+}
+h1 span
+{
+    border: none;
+    font-size: 1vw;
 }
 
 /*-------------------------------------------mobile---------------------------------------------*/
@@ -566,11 +639,12 @@ main form
         background-image : url("../images/mobileposter.webp");
         background-repeat: no-repeat;
         background-size  : cover;
-        height: 95vh;
-        
-   
-    
+        height           : 95vh;
+
+
+
     }
+
     .jumbotron {
         margin-top: 10%;
         padding   : 10%;
@@ -683,19 +757,21 @@ main form
     }
 
 
-    main div form ,main form{
-        width: 80%;
+    main div form,
+    main form {
+        width  : 80%;
         opacity: 1;
     }
 
-    main div form h4,main form h4,
+    main div form h4,
+    main form h4,
     input[type="submit"],
     input[type="reset"],
     .error {
         font-size: calc(var(--fontsize)+8vw);
 
     }
-   
+
     main span {
         display: none;
 
@@ -710,13 +786,13 @@ main form
         border   : none;
 
     }
-    .hide
-    {
+
+    .hide {
         display: none;
     }
 
 
-  
+
     .loginform form input,
     h4,
     .buttons {
@@ -845,7 +921,7 @@ main form
     }
 
 
-    .notebutton button {
+    .notebutton button ,.button button{
 
         font-size       : calc(var(--fontsize)+5vw);
         padding         : 1%;
@@ -871,6 +947,23 @@ main form
         font-size: 5vw;
 
     }
+    .prices {
+
+        flex-direction: column;
+        width      : 100%;
+        justify-content: flex-start;
+        
+        overflow-y : scroll;
+        height     : 100%;
+        padding    : 2%;
+    
+    }
+    .prices div
+    {
+        width: 90%;
+        margin-bottom: 5%;
+    }
+
 
 
 }
