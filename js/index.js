@@ -7,9 +7,9 @@ const toggleform = () => {
     document.querySelector(".signinform").classList.toggle("hide",)
     let msg = document.querySelector(".signinlink")
     if (msg.innerHTML === 'Create account')
-    msg.innerHTML = 'Already have account?..Login'
+        msg.innerHTML = 'Already have account?..Login'
     else
-    msg.innerHTML='Create account'
+        msg.innerHTML = 'Create account'
 
 
 
@@ -151,7 +151,7 @@ const login = async (event) => {
     try {
         event.preventDefault()
         let form = document.forms['login']
-        console.log(form);
+        // console.log(form);
 
         let email = form.email.value
         let password = form.password.value
@@ -186,9 +186,35 @@ const login = async (event) => {
     }
 }
 
+const forgotpassword = async (event) => {
+    event.preventDefault()
+    const users = await getstudentuser()
+    console.log(users);
+    const form = document.forms['login']
+    // console.log(form);
+
+    const email = form.email.value
+    let existuser = users.filter(ele => {
+        let key = Object.keys(ele.data)[0]
+        if (key === email)
+            return ele.data;
+    })[0]
+    if (existuser === undefined)
+        document.querySelector(".loginemailerror").innerHTML = "Email Not Found"
+    else {
+        const userid = existuser.id;
+        const url = `forgotpassword.html?id=${userid}`
+        console.log(url);
+        window.location.href = url
+    }
+}
+
+
+
 //call signinprocess
 document.querySelector("#signin").addEventListener("submit", signin, true)
 
 document.querySelector("#login").addEventListener("submit", login, true)
+document.querySelector(".forgotpassword").addEventListener("click", forgotpassword, true)
 
 

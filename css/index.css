@@ -166,7 +166,7 @@ main div {
 
 }
 
-main div form {
+main div form ,main form{
     display         : flex;
     flex-direction  : column;
     border          : groove;
@@ -409,7 +409,7 @@ input[type="reset"] {
 
 }
 
-.addfolder input,
+.addfolder input
 .addnote textarea {
     width      : 70%;
     margin-left: 10%;
@@ -552,7 +552,10 @@ input[type="reset"] {
 .show {
     display: block;
 }
-
+main form
+{
+    width: 30vw;
+}
 
 /*-------------------------------------------mobile---------------------------------------------*/
 
@@ -563,6 +566,7 @@ input[type="reset"] {
         background-image : url("../images/mobileposter.webp");
         background-repeat: no-repeat;
         background-size  : cover;
+        height: 95vh;
         
    
     
@@ -679,19 +683,19 @@ input[type="reset"] {
     }
 
 
-    main div form {
+    main div form ,main form{
         width: 80%;
         opacity: 1;
     }
 
-    main div form h4,
+    main div form h4,main form h4,
     input[type="submit"],
     input[type="reset"],
     .error {
         font-size: calc(var(--fontsize)+8vw);
 
     }
-
+   
     main span {
         display: none;
 
